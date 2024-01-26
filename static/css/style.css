@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282b30;
+    color: white;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-image: url('/static/images/background-firstpage.svg');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.container {
+    width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border-radius: 20px; /* Rounded corners for the container */
+    padding-bottom: 150px;
+}
+
+h1 {
+    font-size: 4em; /* Bigger font size */
+    margin-bottom: 20px;
+    color: #61dafb;
+    text-shadow: 2px 2px 4px black;
+}
+
+p {
+    font-size: 1.4em; /* Slightly larger paragraph text */
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.start-button {
+    padding: 20px 40px;
+    background-color: #7289da;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.3em; /* Bigger font size for button text */
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #5b6eae;
+    border-color: #5b6eae;
+    box-shadow: 0 4px 8px #5b6eae;
+}
+
+.knowledge-graph {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.knowledge-graph img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+canvas#graphCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2.5em; /* Smaller font size for mobile */
+    }
+}

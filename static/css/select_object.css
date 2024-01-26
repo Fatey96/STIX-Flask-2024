@@ -1,0 +1,173 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282b30;
+    color: #e0e0e0; /* Lighter text for better readability */
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Increased blur for Neumorphism */
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #1b1e21, -8px -8px 16px #35393f;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #61dafb;
+    text-shadow: 1px 1px 2px black;
+    font-size: calc(1.5em + 1vw); /* Responsive font size */
+}
+
+.stix-objects {
+    margin-bottom: 30px;
+    display: flex; /* Flex layout for better alignment */
+    flex-wrap: wrap; /* Wrap items for responsiveness */
+    justify-content: center; /* Center align items */
+}
+
+.stix-object {
+    background-color: transparent;
+    color: #7289da;
+    border: 2px solid #7289da;
+    border-radius: 10px; /* Rounded corners for Neumorphism */
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px #1b1e21, -4px -4px 8px #35393f;
+}
+
+.stix-object:hover, .stix-object:focus {
+    background-color: #5b6eae;
+    color: white;
+    transform: scale(1.1); /* More noticeable scale on hover */
+    box-shadow: inset 4px 4px 8px #1b1e21, inset -4px -4px 8px #35393f;
+}
+
+.selected-entities, .entity {
+    margin-top: 20px;
+    border: 2px solid #7289da;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 8px #1b1e21, -4px -4px 8px #35393f;
+}
+
+.entity:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #61dafb;
+}
+
+input[type='number'], input[type='submit'] {
+    border-radius: 10px;
+    background-color: #32353b;
+    color: white;
+    padding: 10px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px #1b1e21, -4px -4px 8px #35393f;
+}
+
+input[type='number'] {
+    width: 80px;
+    text-align: center;
+}
+
+input[type='submit'] {
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    background-color: #7289da;
+    box-shadow: 0 2px 4px #5b6eae;
+}
+
+input[type='submit']:hover {
+    background-color: #5b6eae;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px #7289da;
+}
+
+.stix-visualizer-button {
+    background-color: #61dafb;
+    color: #282b30;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+    display: inline-block;
+    margin: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stix-visualizer-button:hover {
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.75);
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+
+
+#generate-graph, #copy-json, #open-stix-visualizer {
+    color: black; /* Black text for the buttons */
+    background-color: #61dafb; /* Light blue background */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 4px 4px 8px #1b1e21, -4px -4px 8px #35393f;
+    text-align: center;
+    width: auto;
+}
+
+#generate-graph:hover, #copy-json:hover, #open-stix-visualizer:hover {
+    background-color: #50b0da; /* Slightly darker shade on hover */
+    box-shadow: inset 4px 4px 8px #1b1e21, inset -4px -4px 8px #35393f; /* Inset shadow for pressed effect */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.stix-object.selected {
+    background-color: #7289da; /* Fill color when selected */
+    color: white;
+    box-shadow: inset 4px 4px 8px #1b1e21, inset -4px -4px 8px #35393f; /* Inset shadow for a pressed look */
+    transform: scale(1.05); /* Slightly enlarged to indicate selection */
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .selected-entities, .entity {
+        display: block;
+        margin-right: 0;
+    }
+
+    .stix-objects {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+}
